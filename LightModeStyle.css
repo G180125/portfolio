@@ -291,6 +291,9 @@ body {
     align-items: center;
     justify-content: space-evenly;
     color: #121212;
+    transition: transform 1s ease-in-out;
+    animation: slideUp 1s ease-in-out;
+    overflow-y: hidden;
 }
 
 .contact-container h1 {
