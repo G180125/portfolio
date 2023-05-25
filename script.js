@@ -135,6 +135,18 @@ function toggleTheme() {
     }
 }
 
+const downloadButton = document.getElementById('download-button');
+
+downloadButton.addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.href = 'https://nguyenviphilong.s3.ap-southeast-1.amazonaws.com/pORTFOLIO/CV.pdf';
+    link.download = 'cv.pdf';
+    link.target = '_blank'; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+
 
 
 
