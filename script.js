@@ -51,90 +51,6 @@ const delay = 1000;
 
 typeAndDeleteText(textElement, text1, text2, typingSpeed, deletingSpeed, delay);
 
-const themeStyle = document.getElementById('theme-style');
-const socialMediaSection = document.querySelector('.social-media');
-
-const storedTheme = localStorage.getItem('theme');
-if (storedTheme === 'light') {
-    themeStyle.setAttribute('href', 'lightModeStyle.css');
-    socialMediaSection.innerHTML = `
-        <a href="https://www.facebook.com/viphilongnguyen/" target="_blank">
-            <box-icon type='logo' name='facebook-square' color='#121212' size='40px'></box-icon>
-        </a>
-        <a href="https://www.instagram.com/nguyen.vi.phi.long/" target="_blank">
-            <box-icon type='logo' name='instagram-alt' color='#121212' size='40px'></box-icon>
-        </a>
-        <a href="https://www.youtube.com/channel/UCPQfxJxgKEmkSaLMDvzAQbw" target="_blank">
-            <box-icon type='logo' name='youtube' color='#121212' size='40px'></box-icon>
-        </a>
-        <div class="separator"></div>
-        <div class="mode">
-            <box-icon name='moon' type='solid' color='#868686' background-color='#868686' size='40px' onclick="toggleTheme()"></box-icon>
-            <box-icon name='sun' type='solid' color='#121212' background-color='#121212' size='40px'></box-icon>
-        </div>
-    `;
-} else {
-    themeStyle.setAttribute('href', 'darkModeStyle.css');
-    socialMediaSection.innerHTML = `
-        <a href="https://www.facebook.com/viphilongnguyen/" target="_blank">
-            <box-icon type='logo' name='facebook-square' color='#FFF' size='40px'></box-icon>
-        </a>
-        <a href="https://www.instagram.com/nguyen.vi.phi.long/" target="_blank">
-            <box-icon type='logo' name='instagram-alt' color='#FFF' size='40px'></box-icon>
-        </a>
-        <a href="https://www.youtube.com/channel/UCPQfxJxgKEmkSaLMDvzAQbw" target="_blank">
-            <box-icon type='logo' name='youtube' color='#FFF' size='40px'></box-icon>
-        </a>
-        <div class="separator"></div>
-        <div class="mode">
-            <box-icon name='moon' type='solid' color='#FFF' background-color='#FFF' size='40px'></box-icon>
-            <box-icon name='sun' type='solid' color='#868686' background-color='#868686' size='40px' onclick="toggleTheme()"></box-icon>
-        </div>
-    `;
-}
-
-function toggleTheme() {
-    if (themeStyle.getAttribute('href') === 'lightModeStyle.css') {
-        themeStyle.setAttribute('href', 'darkModeStyle.css');
-        socialMediaSection.innerHTML = `
-            <a href="https://www.facebook.com/viphilongnguyen/" target="_blank">
-                <box-icon type='logo' name='facebook-square' color='#FFF' size='40px'></box-icon>
-            </a>
-            <a href="https://www.instagram.com/nguyen.vi.phi.long/" target="_blank">
-                <box-icon type='logo' name='instagram-alt' color='#FFF' size='40px'></box-icon>
-            </a>
-            <a href="https://www.youtube.com/channel/UCPQfxJxgKEmkSaLMDvzAQbw" target="_blank">
-                <box-icon type='logo' name='youtube' color='#FFF' size='40px'></box-icon>
-            </a>
-            <div class="separator"></div>
-            <div class="mode">
-                <box-icon name='moon' type='solid' color='#FFF' background-color='#FFF' size='40px'></box-icon>
-                <box-icon name='sun' type='solid' color='#868686' background-color='#868686' size='40px' onclick="toggleTheme()"></box-icon>
-            </div>
-        `;
-        localStorage.setItem('theme', 'dark');
-    } else {
-        themeStyle.setAttribute('href', 'lightModeStyle.css');
-        socialMediaSection.innerHTML = `
-            <a href="https://www.facebook.com/viphilongnguyen/" target="_blank">
-                <box-icon type='logo' name='facebook-square' color='#121212' size='40px'></box-icon>
-            </a>
-            <a href="https://www.instagram.com/nguyen.vi.phi.long/" target="_blank">
-                <box-icon type='logo' name='instagram-alt' color='#121212' size='40px'></box-icon>
-            </a>
-            <a href="https://www.youtube.com/channel/UCPQfxJxgKEmkSaLMDvzAQbw" target="_blank">
-                <box-icon type='logo' name='youtube' color='#121212' size='40px'></box-icon>
-            </a>
-            <div class="separator"></div>
-            <div class="mode">
-                <box-icon name='moon' type='solid' color='#868686' background-color='#868686' size='40px' onclick="toggleTheme()"></box-icon>
-                <box-icon name='sun' type='solid' color='#121212' background-color='#121212' size='40px'></box-icon>
-            </div>
-        `;
-        localStorage.setItem('theme', 'light');
-    }
-}
-
 const downloadButton = document.getElementById('download-button');
 
 downloadButton.addEventListener('click', () => {
@@ -146,6 +62,7 @@ downloadButton.addEventListener('click', () => {
     link.click();
     document.body.removeChild(link);
 });
+
 
 
 
